@@ -1,0 +1,645 @@
+<!doctype html>
+    <html lang="en" data-bs-theme="dark">
+      <head>
+        <style>
+          h1{
+               width:100%;
+               background-color: rgb(53, 199, 109);
+              color: black;
+              text-align: center;
+          
+          }
+          .TopRight{
+            color:rgb(255, 244, 244);
+              margin-top: 4%;
+              position: fixed;
+              background-color: rgb(7, 7, 7);
+              width:150px;
+              height: 100%;
+          }
+          .mainC{
+              
+              float: left;
+              margin-left:150px;
+              margin-top: 4%;
+          }
+          textarea{
+            background-color: black;
+            color:white;
+          }
+          table {
+                  border-collapse: collapse;
+              }
+              th {
+                  text-align: center;
+                  background-color:green;
+                  Color:white;
+              }
+              td {
+                color: black;
+                  background-color: blanchedalmond;
+                  border:1px solid black;
+                  padding:5px
+               
+              }
+              a:hover{
+                background-color:rgb(95, 43, 236);
+                font-size: larger;
+                border: 1px;
+                border-radius: 10px;
+              }
+      </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      </head>
+        <body style="overflow-y:auto">
+    
+  <nav class="navbar fixed-top bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#">LEARN C</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">UNIT 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="unit2.html">UNIT 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit3.html">UNIT 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit4.html">UNIT 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit5.html">UNIT 5</a>
+          </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  </nav>
+  <div class="TopRight" >
+      <nav class="nav flex-column">
+        <a style="color: aliceblue;" class="nav-link" href="#intro">INTRODUCTION</a>
+    <a class="nav-link" href="#his">HISTORY OF C</a>
+    <a class="nav-link" href="#struct">STRUCTURE OF C</a>
+    <a class="nav-link" style="color: aliceblue;" href="#token">Tokens in C</a>
+    <a class="nav-link"href="#keyword">Keywords</a>
+    <a class="nav-link"href="#identifier">Identifiers </a>
+    <a class="nav-link"href="#string">Strings</a>
+    <a class="nav-link"href="#operator">Operators</a>
+    <a class="nav-link"href="#constant">Constant </a>
+  <a class="nav-link"href="#specialchar">Special Characters </a>
+
+  </nav>
+</div>
+<div class="mainC">
+    <h1>UNIT 1</h1>
+    <h6 id="intro"></h6><br><br>
+    <h2>Introduction</h2>
+    <p>
+        C is a general-purpose programming language created by Dennis Ritchie at the Bell Laboratories in 1972.
+
+It is a very popular language, despite being old.
+
+C is strongly associated with UNIX, as it was developed to write the UNIX operating system.
+Many later languages have borrowed syntax/features directly or indirectly from the C language. Like syntax of 
+Java, PHP, JavaScript, and many other languages are mainly based on the C language. C++ is nearly a superset of C language (Only a few programs may compile in C, but not in C++).
+
+    </p><br>
+    <h6 id="his"></h6><br><br>
+    <h2>History of C</h2>
+    <p>History of C language is interesting to know. Here we are going to discuss a brief history of the c language.<img style="float:right"; src="https://static.javatpoint.com/cpages/images/dennis.jpg">
+
+        C programming language was developed in 1972 by Dennis Ritchie at bell laboratories of AT&T (American Telephone & Telegraph), located in the U.S.A.
+        
+        Dennis Ritchie is known as the founder of the c language.
+        
+        It was developed to overcome the problems of previous languages such as B, BCPL, etc.</p>
+        <p>
+          <h6 id="struct"></h6><br><br>
+            <h2>Structure of C</h2>
+            Most programming languages have a structure, including the C language. A C program is divided into six sections: Documentation, Link, Definition, Global Declaration, Main() Function, and 
+            Subprograms. While the main section is compulsory, the rest are optional in the structure of the C program.
+            <br><br>
+            <h4>Basic Structure of the C Program</h4>
+            <table border="1" >
+                <tr style="text-align: center;">
+                    <th>Section</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Documentation</td>
+                    <td>Consists of the description of the program, programmer's name, and creation date. These are generally written in the form of comments.</td>
+                </tr>
+                <tr>
+                    <td >Link</td>
+                    <td>All header files are included in this section which contains different functions from the libraries. A copy of these header files is inserted into your code before compilation.</td>
+                </tr>
+                <tr>
+                    <td>Definition</td>
+                    <td>Includes preprocessor directive, which contains symbolic constants. E.g.: #define allows us to use constants in our code. It replaces all the constants with its value in the code.</td>
+                </tr>
+                <tr>
+                    <td>Global Declaration</td>
+                    <td>Includes declaration of global variables, function declarations, static global variables, and functions.</td>
+                </tr>
+                <tr>
+                    <td>Main() Function</td>
+                    <td>For every C program, the execution starts from the main() function. It is mandatory to include a main() function in every C program.</td>
+                </tr>
+                <tr>
+                    <td>Subprograms</td>
+                    <td>Includes all user-defined functions (functions the user provides). They can contain the inbuilt functions and the function definitions declared in the Global Declaration section. These are called in the main() function.</td>
+                </tr>
+            </table>
+        </p>
+        <h6 id="token"></h6><br><br>
+        <h2>Tokens in C</h2>
+
+        <p>Tokens in C is the most important element to be used in creating a program in C. We can define the token as the smallest individual element in C. For `example, we cannot create a sentence without using words; similarly, we cannot create a
+             program in C without using tokens in C. Therefore, we can say that tokens in C is the building block or the basic component for creating a program in C language.</p>
+             <h5>Classification of tokens in C</h5>
+             <p>Tokens in C language can be divided into the following categories:</p>
+             <img src="https://static.javatpoint.com/cpages/images/tokens-in-c.png">
+        <h6 id="keyword"></h6><br><br>
+        <h2> Keywords in C</h2>
+             <p>
+              Keywords are predefined, reserved words used in programming that have special meanings to the compiler. Keywords are part of the syntax and they cannot be used as an identifier. For example:
+
+              int money;
+Here, int is a keyword that indicates money is a variable of type int (integer).
+
+As C is a case sensitive language, all keywords must be written in lowercase. Here is a list of all keywords allowed in ANSI C.
+             </p>
+             <table width="50%">
+              <tr>
+                <th style="text-align: center;" colspan="4">Keywords</th>
+              </tr>
+              <tr>
+                <td> int</td>
+                <td>char </td>
+                <td>float </td>
+                <td> double</td>
+              </tr>
+              <tr>
+                <td> const</td>
+                <td> short</td>
+                <td> unsigned</td>
+                <td> long</td>
+                
+              </tr>
+              <tr>
+                <td> switch</td>
+                <td>case </td>
+                <td>default </td>
+                <td>break </td>
+               
+              </tr>
+              <tr>
+                <td>auto </td>
+                <td>static </td>
+                <td> extern</td>
+                <td>register </td>
+                
+                
+              </tr>
+              <tr>
+                
+                <td>struct </td>
+                <td> union</td>
+                <td> typedef</td>
+                <td> enum</td>
+                
+              </tr>
+              <tr>
+                <td> for</td>
+                <td>do </td>
+                <td> while</td>
+                <td>continue </td>
+              </tr>
+              <tr>
+                <td>goto </td>
+                <td> if</td>
+                <td>else </td>
+                <td> signed</td>
+              </tr>
+              <tr>
+                <td>void </td>
+                <td> return</td>
+                <td> sizeof</td>
+                <td> volatile</td>
+              </tr>
+             
+             </table>
+             <h5>Properties of Keywords</h5>
+             <ul>
+              <li>All the keywords in C programming language are defined as lowercase letters so they must be used only in lowercase letters
+              </li>
+              <li>Every keyword has a specific meaning, users can not change that meaning.
+              </li>
+              <li> Keywords can not be used as user-defined names like variable, functions, arrays, pointers, etc...
+              </li>
+              <li>Every keyword in C programming language represents something or specifies some kind of action to be performed by the compiler.
+              </li>
+             </ul>
+             <h6 id="identifier"></h6><br><br>
+             <h2>C Identifiers</h2>
+             <p>An identifier is used for any variable, function, data definition, labels in your program etc.
+
+              Before starting any language, you must at least know how you name an identifier.
+        
+              In C language, an identifier is a combination of alphanumeric characters, i.e. first begin with a letter of 
+              the alphabet or an underline, and the remaining are letter of an alphabet, any numeric digit, or the underline.
+
+             </p>
+             <h5>Rules for naming identifiers</h5>
+             <ul>
+              <li>The case of alphabetic characters is significant. For example, using "TUTORIAL" for a variable is not the same as using "tutorial" and neither of them is the same as using "TutoRial for a variable. All three refer to different variables.
+
+              </li>
+              <li>There is no rule on how long an identifier can be. We can run into problems in some compilers, if an identifier is longer than 31 characters.
+                 This is different for the different compilers.
+
+              </li>
+              <li>A valid identifier can have letters (both uppercase and lowercase letters), digits and underscores.
+
+              </li>
+              <li>The first letter of an identifier should be either a letter or an underscore.
+
+              </li>
+              <li>You cannot use keywords like int, while etc. as identifiers.
+
+              </li>
+             </ul>
+             <p>Identifiers must be unique<br>
+
+              &nbsp  &nbsp  &nbsp For example:<br>
+              &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspint student;<br>
+              &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspfloat marks;<br>
+              Here, student and marks are identifiers.
+               </p>
+               <h6 id="string"></h6><br><br>
+               <h2>String</h2>
+               <p>Strings are used for storing text/characters.
+
+                For example, "Hello World" is a string of characters.
+                
+                Unlike many other programming languages, C does not have a String type to easily create string variables.
+                 Instead, you must use the char type and create an array of characters to make a string in C:</p>
+                 <textarea style="width: 350px; height: 35px;">char greetings[] = "Hello World!";</textarea>
+                 <p>Note that you have to use double quotes ("").
+
+                  To output the string, you can use the printf() function together with the format specifier %s to tell C that we are now working with strings:</p>
+                  <h5>Access Strings</h5>
+                  <p>Since strings are actually arrays in C, you can access a string by referring to its index number inside square brackets [].
+
+                    This example prints the first character (0) in greetings:<br>
+                    <textarea style="width: 350px; height: 100px;">char greetings[] = "Hello World!";
+printf("%c", greetings[0]);</textarea>
+                    </p>
+                    <h5>Another Way Of Creating Strings</h5>
+                    <p>In the examples above, we used a "string literal" to create a string variable. This is the easiest way to create a string in C.
+
+                      You should also note that you can create a string with a set of characters. This example will produce the same result as the example in the beginning of this page:</p>
+                      <textarea style="width: 550px; height: 100px;">char greetings[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};
+printf("%s", greetings);</textarea>
+                        <h6 id="operator"></h6><br><br>
+                        <h2>C Operators</h2>
+                        <p>Operators are used to perform operations on variables and values.<br>
+
+                          In the example below, we use the + operator to add together two values:<br>
+                          
+                         &nbsp;&nbsp;&nbsp; int myNum = 100 + 50;<br><br>
+                          C divides the operators into the following groups:
+                          <ul>
+                            <li>Arithmetic operators</li>
+                            <li>Assignment operators
+                            </li>
+                            <li>Comparison operators
+                            </li>
+                            <li>Logical operators
+                            </li>
+                            <li>Bitwise operators
+                            </li>
+
+                          </ul>
+                        </p>
+
+                        <h5>Arithmetic Operators</h5>
+                        <table  width="60%">
+                          <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                          </tr>
+                          <tr>
+                            <td>+</td>
+                            <td>Addition</td>
+                            <td>Adds together two values</td>
+                            <td>x+y</td>
+                          </tr>
+                          <tr>
+                            <td>-</td>
+                            <td>Subtraction</td>
+                            <td>Subtracts together two values</td>
+                            <td>x-y</td>
+                          </tr>
+                          <tr>
+                            <td>*</td>
+                            <td>Multiplication</td>
+                            <td>Multiplies two values</td>
+                            <td>x*y</td>
+                          </tr>
+                          <tr>
+                            <td>/</td>
+                            <td>Division</td>
+                            <td>Devides together two values</td>
+                            <td>x/y</td>
+                          </tr>
+                          <tr>
+                            	
+                            <td>%	</td>
+                            <td>Modulus</td>
+                            <td>	Returns the division remainder</td>
+                            <td>x % y</td>
+                          </tr>
+                          
+                          <tr>
+                          		
+                            <td>++	</td>
+                            <td>Increment	</td>
+                            <td>Increases the value of a variable by 1</td>
+                            <td>++x</td>
+                          </tr>
+                          <tr>
+                          		
+                            <td>--	</td>
+                            <td>Derement	</td>
+                            <td>	Decreases the value of a variable by 1	</td>
+                            <td>--x</td>
+                          </tr>
+                        </table><br>
+                        <h5>Comparison Operators</h5>
+                        <p>Comparison operators are used to compare two values (or variables). This is important in programming,
+                           because it helps us to find answers and make decisions.
+
+                          The return value of a comparison is either 1 or 0, which means true (1) or false (0). 
+                          These values are known as Boolean values, and you will learn more about them in the Booleans and If..Else chapter.</p>
+                          <table>
+                            <tr>
+                              <th>Operator</th>
+                              <th>	Name</th>
+                              <th>Example</th>
+                            </tr>
+                            <tr>
+                              <td>==</td>
+                              <td>Equal to</td>
+                              <td>x == y</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>!=</td>
+                              <td>	Not equal</td>
+                              <td>	x != y</td>
+                              
+                            </tr>
+                            <tr>
+                              <td><</td>
+                              <td>Greater than</td>
+                              <td>	x <y</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>></td>
+                              <td>Less than</td>
+                              <td>	x > y</td>
+                              
+                            </tr>
+                            <tr>
+                              <td><=</td>
+                              <td>Greater than or equal to</td>
+                              <td>	x <= y</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>>=</td>
+                              <td>Less than or equal to</td>
+                              <td>	x >= y</td>
+                              
+                            </tr>
+                          </table><br>
+                          <h5>Logical Operators</h5>
+                          <p>You can also test for true or false values with logical operators.
+
+                            Logical operators are used to determine the logic between variables or values:</p>
+                          <table>
+                            <tr>
+                              <th>Operato	</th>
+                              <th>r	Name</th>
+                              
+                              <th>Description	</th>
+                              <th>Example</th>
+                            </tr>
+                            <tr>
+                              <td>&& </td>
+                              <td>	Logical AND</td>
+                              <td>	Returns true if both statements are true</td>
+                              <td>	x < 5 &&  x < 10</td>
+                            </tr>
+                            <tr>
+                              <td>||	</td>
+                              <td> 	Logical OR</td>
+                              <td>Returns true if one of the statements is true</td>
+                              <td>	x < 5 || x < 4</td>
+                            </tr>
+                            <tr>
+                              <td>!		</td>
+                              <td>Logical NOT</td>
+                              <td>Reverse the result, returns false if the result is true</td>
+                              <td>	!(x < 5 && x < 10)</td>
+                            </tr>
+                          </table><br>
+                          <h5>Assignment Operators</h5>
+                          <table>
+                            <tr>
+                              <th style="width:30%">Operator</th>
+                              <th style="width:30%">Example</th>
+                              <th style="width:30%">Same As</th>
+                              
+                            </tr>
+                            <tr>
+                              <td>=</td>
+                              <td>x = 5</td>
+                              <td>x = 5</td>
+
+                            </tr>
+                            <tr>
+                              <td>+=</td>
+                              <td>x += 3</td>
+                              <td>x = x + 3</td>
+                            </tr>
+                            <tr>
+                              <td>-=</td>
+                              <td>x -= 3</td>
+                              <td>x = x - 3</td>
+                            </tr>
+                            <tr>
+                              <td>*=</td>
+                              <td>x *= 3</td>
+                              <td>x = x * 3</td>
+                            </tr>
+                            <tr>
+                              <td>/=</td>
+                              <td>x /= 3</td>
+                              <td>x = x / 3</td>
+
+                            </tr>
+                            <tr>
+                              <td>%=</td>
+                              <td>x %= 3</td>
+                              <td>x = x % 3</td>
+                            </tr>
+                            <tr>
+                              <td>& =</td>
+                              <td>x &= 3</td>
+                              <td>x = x& 3</td>
+                            </tr>
+                            <tr>
+                              <td>|=</td>
+                              <td>x |= 3</td>
+                              <td>x = x | 3</td>
+                            </tr>
+                    
+                          </table><br>
+                          <h5>Sizeof Operator</h5>
+                          <p>The memory size (in bytes) of a data type or a variable can be found with the sizeof operator:</p>
+                          <textarea style="width: 500px;height: 260px;">
+                            int myInt;
+                            float myFloat;
+                            double myDouble;
+                            char myChar;
+                            
+                            printf("%lu\n", sizeof(myInt));
+                            printf("%lu\n", sizeof(myFloat));
+                            printf("%lu\n", sizeof(myDouble));
+                            printf("%lu\n", sizeof(myChar));</textarea>
+                            <h6 id="constant"></h6><br><br>
+                            <h2>Constants</h2>
+                            <p>A constant is a name given to the variable whose values can't be altered or changed. A constant is very similar to variables
+                               in the C programming language, but it can hold only a single variable during the execution of a program. It means that once
+                                we assign value to the constant, then we can’t change it throughout the execution of a program- it stays fixed.</p>
+<br>
+          <h5> Integer Constants</h5><br>
+It can be an octal integer or a decimal integer or even a hexadecimal integer. We specify a decimal integer value as a direct integer value, while we prefix the octal integer values with ‘o’. We also prefix the hexadecimal integer values with ‘0x’.
+
+The integer constant used in a program can also be of an unsigned type or a long type. We suffix the unsigned constant value with ‘u’ and we suffix the long integer constant value with ‘l’. Also, we suffix the unsigned long integer constant value using ‘ul’.
+
+Examples,<br>
+
+55 —> Decimal Integer Constant<br>
+
+0x5B —> Hexa Decimal Integer Constant<br>
+
+O23 —> Octal Integer Constant<br>
+
+68ul —> Unsigned Long Integer Constant<br>
+
+50l —> Long Integer Constant<br>
+
+30u —> Unsigned Integer Constant<br>
+
+
+<br><h5>Floating Point Constants / Real Constants</h5><br>
+This type of constant must contain both the parts- decimal as well as integers. Sometimes, the floating-point constant may also contain the exponential part. In such a case when the floating-point constant gets represented in an exponential form, its value must be suffixed using ‘E’ or ‘e’.
+
+Example,<br>
+
+We represent the floating-point value 3.14 as 3E-14 in its exponent form.<br>
+
+
+<br><h5>Character Constant</h5> 
+The character constants are symbols that are enclosed in one single quotation. The maximum length of a character quotation is of one character only.
+
+Example,<br>
+
+‘B’<br>
+
+‘5’<br>
+
+‘+’<br>
+
+Some predefined character constants exist in the C programming language, known as escape sequences. Each escape sequence consists of a special functionality of its own, and each of these sequences gets prefixed with a ‘/’ symbol. We use these escape sequences in output functions known as ‘printf()’.
+
+
+<br><br><h5>String Constants</h5>
+The string constants are a collection of various special symbols, digits, characters, and escape sequences that get enclosed in double quotations.
+
+The definition of a string constant occurs in a single line:<br>
+
+“This is Cookie”<br>
+
+We can define this with the use of constant multiple lines as well:<br>
+
+” This\<br>
+
+is\<br>
+
+Cookie”<br>
+
+The definition of the same string constant can also occur using white spaces:<br>
+
+“This” “is” “Cookie”<br>
+
+All the three mentioned above define the very same string constant.<br>
+<h6 id="specialchar"></h6><br><br>
+<h2>Special character</h2>
+<ul>
+  <li>These are some types of characters that have a special type of meaning in the C language  </li>
+  <li>These types of constants must be preceded by a backslash symbol so that the program can use the special function in them.  </li>
+  <li>Here is a list of all the special characters used in the C language and their purpose:
+  </li>
+</ul>
+<table>
+  <tr>
+    <th><strong>Meaning of Character</strong></th>
+    <th><strong>Backslash Character</strong></th>
+  </tr>
+  <tr>
+    <td>Backspace</td>
+    <td>\b</td>
+  </tr>
+  <tr>
+    <td>New line</td>
+
+    <td>\n</td>
+  </tr>
+  <tr><td>Form feed</td><td>\f</td></tr>
+  <tr><td>Horizontal tab</td><td>\t</td></tr>
+  <tr><td>Carriage return</td><td>\r</td></tr>
+  <tr><td>Single quote</td><td>\’</td></tr>
+  <tr><td>Double quote</td><td>\”</td></tr>
+  <tr><td>Vertical tab</td><td>\v</td></tr>
+  <tr><td>Backslash</td>
+    <td>\\</td></tr>
+    <tr><td>Alert or bell</td><td>\a</td></tr>
+
+</table>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,630 @@
+<!doctype html>
+    <html lang="en" data-bs-theme="dark">
+      <head>
+        <style>
+          h1{
+               width:100%;
+               background-color: rgb(53, 199, 109);
+              color: black;
+              text-align: center;
+          
+          }
+          .TopRight{
+            color:rgb(255, 244, 244);
+              margin-top: 4%;
+              position: fixed;
+              background-color: rgb(7, 7, 7);
+              width:150px;
+              height: 100%;
+          }
+          .mainC{
+              
+              float: left;
+              margin-left:150px;
+              margin-top: 50px;
+          }
+          textarea{
+            background-color: black;
+            color:white;
+          }
+          table {
+                  border-collapse: collapse;
+              }
+              th {
+                  text-align: center;
+                  background-color:green;
+                  Color:white;
+              }
+              td {
+                  background-color: blanchedalmond;
+                  border:1px solid black;
+                  padding:5px
+               
+              }
+              a:hover{
+                background-color:rgb(95, 43, 236);
+                font-size: larger;
+                border: 1px;
+                border-radius: 10px;
+              }
+      </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      </head>
+  <body style="overflow-y:auto">
+    
+  <nav class="navbar fixed-top bg-body-tertiary" data-bs-theme="blue">
+  <div class="container-fluid" >
+
+    <a class="navbar-brand" href="#">LEARN C</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">UNIT 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="unit2.html">UNIT 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit3.html">UNIT 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit4.html">UNIT 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit5.html">UNIT 5</a>
+          </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  </nav>
+  <div class="TopRight" data-bs-theme="dark">
+      <nav class="nav flex-column">
+    <a style="color: aliceblue;" class="nav-link active" aria-current="page" href="#intro">Introduction to conditional statements   </a>
+    <a class="nav-link" href="#if">If</a>
+    <a class="nav-link" href="#ifelse">If Else</a>
+    <a class="nav-link" href="#Nifelse">Nested If Else</a>
+    <a style="color: aliceblue;" class="nav-link" href="#loop">Loops in C</a>
+    <a class="nav-link" href="#for">for</a>
+    <a class="nav-link" href="#while">while</a>
+    <a class="nav-link"href="#dowhile">Do while</a>
+    <a class="nav-link"href="#switch">switch case </a>
+    <a style="color: aliceblue;" class="nav-link"href="#">Functions</a>
+    <a class="nav-link"href="function">What is functions???</a>
+
+    <a class="nav-link"href="#Rfunction">Recursive Functions</a>
+    
+
+  </nav>
+</div>
+<div class="mainC">
+    <h1>UNIT 2</h1>
+    <h6 id="intro"></h6><br><br>
+    <h2>Introduction to conditional statements</h2>
+    <p>Conditional Statements in C programming are used to make decisions based on the conditions. Conditional statements execute sequentially when there is no condition around the statements. If you put some condition for a block of statements, the execution flow may change based on the result evaluated by the condition. This process is called decision making in ‘C.’
+
+      In ‘C’ programming conditional statements are possible with the help of the following two constructs:<br>
+      
+      1. If statement<br>
+      2. If-else statement<br>It is also called as branching as a program decides which statement to execute based on the result of the evaluated condition.</p>
+      <h6 id="if"></h6><br><br>
+      <h2>If statement</h2>
+      <p>It is one of the powerful conditional statement. If statement is responsible for modifying the flow of execution of a program. If statement is always used with a condition. The condition is evaluated first before executing any statement inside the body of If. The syntax for if statement is as follows:
+<br>
+  <b>if (condition) <br>
+  instruction;</b><br>     The condition evaluates to either true or false. True is always a non-zero value, and false is a value that contains zero. Instructions can be a single instruction or a code block enclosed by curly braces { }.</p>
+  <p>Following program illustrates the use of if construct in ‘C’ programming:<br>
+  <textarea style="width: 350px; height: 340px;">
+    
+    #include<stdio.h>
+    int main()
+    {
+      int num1=1;
+      int num2=2;
+      if(num1<num2)		//test-condition
+      {
+        printf("num1 is smaller than num2");
+      }
+      return 0;
+    }</textarea></p>
+    <p>
+      <b>OUTPUT:<br><textarea style="width: 300px">
+num1 is smaller than num2</textarea>;</b> </p>
+<ol>
+  <li>In the above program, we have initialized two variables with num1, num2 with value as 1, 2 respectively.
+    <li>Then, we have used if with a test-expression to check which number is the smallest and which number is the largest. We have used a relational expression in if construct. Since the value of num1 is smaller than num2, the condition will evaluate to true.</li>
+    <li>Thus it will print the statement inside the block of If. After that, the control will go outside of the block and program will be terminated with a successful result.</li>
+  </ol>
+  <h6 id="ifelse"></h6><br><br>
+<h2>The If-Else statement</h2>
+<img src="https://www.guru99.com/images/2013/04/if_then_flowchart.png"><br>
+<br> <p>The if-else is statement is an extended version of If. The general form of if-else is as follows:<br>
+  <textarea style="width: 200px; height: 300px;">if (test-expression)
+    {
+        True block of statements
+    }
+    Else
+    {
+        False block of statements
+    }
+    Statements;</textarea>
+    <p>n this type of a construct, if the value of test-expression is true, then the true block of statements will be executed. If the value of test-expression if false, then the false block of statements will be executed. In any case, after the execution, the control will be automatically transferred to the statements appearing outside the block of If.
+      n this type of a construct, if the value of test-expression is true, then the true block of statements will be executed. If the value of test-expression if false, then the false block of statements will be executed. In any case, after the execution, the control will be automatically transferred to the statements appearing outside the block of If.<br>
+      Following programs illustrate the use of the if-else construct:<br>
+    </p>
+    <h6 id="Nifelse"></h6><br><br>
+    <h2>Nested If-Else statement</h2>
+    <p>We already saw how useful if and else statements are, but what if we need to check for more conditions even when one condition is satisfied?
+
+For example, if we need to analyse if the number is even or odd, and then if it is even, whether it is divisible by 4 or not, and if it is odd, whether it is divisible by 3 or not. In such a case, only one if and else statement wouldn’t suffice.
+
+First, we will check with one if-else statement whether the number is even or odd. Then in the if block, that means if the number was even, we would have to include another if and else statement checking if it is divisible by 4 or not, and similarly in the else block, we would have to include another if and else statement checking if the number is divisible by 3 or not.
+
+Including numerous if-else statements inside an if and else statement is called nesting. The second if and else statements are said to be nested inside the first if and else statement.
+
+This is why C language allows nesting of if and else statements. These are called nested if else statements and provide clearer decision making when some extra conditions are needed to be checked inside the initial conditions like in the previous example.</p>
+<h5>The syntax for Nested If Else Statement in C will be :</h5><br>
+<textarea style="width: 400px; height: 660px;">//check if the first condition holds
+if (condition 1) {
+    
+    //if the second condition holds
+    if (condition 2) {
+        do something
+    }
+    //if the second condition does not hold
+    else {
+        do something else
+    }
+    
+}
+// if the first condition does not hold
+else{
+    
+    //if the third condition holds
+    if (condition 3) {
+        do something
+    }
+    //if the third condition does not hold
+    else {
+        do something else
+    }
+    
+}
+</textarea><br>
+<h5>Flowchart of Nested If Else Statement in C</h5><br>
+<img style="width:600px;height:550px" src="https://scaler.com/topics/images/flowchart-for-nested-if-else-statements">
+  
+<h5>Example 1</h5><br>
+<p>Check if three numbers are equal</p><br>
+<textarea style="width: 500px; height:710px;" >#include <stdio.h>
+
+  int main() {
+  
+    // variables to store the three numbers
+    int a, b, c;
+  
+    //take input from the user
+    scanf("%d %d %d", &a, &b, &c);
+  
+    //if else condition to check whether first two numbers are equal
+    if (a == b) {
+  
+      //nested if else condition to check if c is equal to a and b
+      if (a == c) {
+        //all are equal
+        printf("Yes");
+      } else {
+        //all are not equal
+        printf("No");
+      }
+    } else {
+      //the first two numbers are not equal, so they are not equal
+      printf("No");
+    }
+  
+    return 0;
+  }
+  </textarea>
+  <h5>Example 2 :</h5>
+  <p> Check if a year is a leap year</p><br>
+  <textarea style="width: 500px; height:1000px;" >#include <stdio.h>
+
+    int main() {
+    
+      // variable to store the year
+      int year;
+    
+      //take input from the user
+      scanf("%d", &year);
+    
+      //if else condition to check whether the year is divisible by 4
+      if (year % 4 == 0) {
+    
+        //nested if else condition to check if year is divisible by 100
+        if (year % 100 == 0) {
+    
+          //nested if else condition to check if year is divisible by 400
+          if (year % 400 == 0) {
+            //the year is a leap year
+            printf("Leap year");
+          } else {
+            //the year is not a leap year
+            printf("Not a leap year");
+          }
+    
+        } else {
+          //the year is a leap year
+          printf("Leap year");
+        }
+    
+      } else {
+    
+        //the year is not a leap year
+        printf("Not a leap year");
+    
+      }
+    
+      return 0;
+    }
+    </textarea>
+    <h6 id="loop"></h6><br><br>
+    <h2>LOOPs in C</h2>
+    <p>In programming, a loop is used to repeat a block of code until the specified condition is met.<br>
+
+      C programming has three types of loops:<br>
+      <ol>
+    <li>  for loop</li>
+     <li> while loop</li>
+     <li>do...while loop</li></ol></p><br>
+     <h6 id="for"></h6><br><br>
+      <h2>for loop</h2> 
+      <p>The syntax of the for loop is:</p>
+      <textarea style="width:350px;height: 150px;">for (initializationStatement; testExpression; updateStatement)
+        {
+            // statements inside the body of loop
+        }</textarea><br><br>
+        <h5>How for loop works?</h5>
+        <ul>
+          <li>The initialization statement is executed only once.
+          </li>
+          <li>Then, the test expression is evaluated. If the test expression is evaluated to false, the for loop is terminated.
+          </li>
+          <li>However, if the test expression is evaluated to true, statements inside the body of the for loop are executed, and the update expression is updated.
+          </li>
+          <li>Again the test expression is evaluated.
+          </li>
+        </ul><p>This process goes on until the test expression is false. When the test expression is false, the loop terminates.<br>
+        </p>
+        <h5>Flowchart of for loop:</h5><br>
+        <img src="https://cdn.programiz.com/sites/tutorial2program/files/c-for-loop.jpg">
+        <h5>Example:</h5>
+        <p>Print numbers from 1 to 10</p>
+        <textarea style="width:300px;height:320px">// Print numbers from 1 to 10
+          #include <stdio.h>
+          
+          int main() {
+            int i;
+          
+            for (i = 1; i < 11; ++i)
+            {
+              printf("%d ", i);
+            }
+            return 0;
+          }
+          </textarea>
+          <h6>Output: </h6>
+          <textarea style="width: 300px;height: auto;">1 2 3 4 5 6 7 8 9 10</textarea>
+          <h6 id="while"></h6><br><br>
+          <h2>while loop</h2>
+          <p>The syntax of the while loop is:</p>
+          <textarea style="width: 300px;height: 100px;">while (testExpression) {
+            // the body of the loop 
+          }</textarea>
+          <h5>How While loop works?</h5>
+          <ul>
+            <li>The while loop evaluates the testExpression inside the parentheses ().
+            </li>
+            <li>If testExpression is true, statements inside the body of while loop are executed. Then, testExpression is evaluated again.
+            </li>
+            <li>The process goes on until testExpression is evaluated to false.
+            </li>
+            <li>If testExpression is false, the loop terminates (ends).
+            </li>
+            </ul>
+            <h5>Flowchart of while loop</h5>
+            <img src="https://cdn.programiz.com/sites/tutorial2program/files/c-while-loop_0.jpg">
+            <br><h5>Example:</h5>
+            <textarea style="width:300px;height:330px">// Print numbers from 1 to 5
+
+              #include <stdio.h>
+              int main() {
+                int i = 1;
+                  
+                while (i <= 5) {
+                  printf("%d\n", i);
+                  ++i;
+                }
+              
+                return 0;
+              }</textarea>
+              <h5>Output:</h5>
+              <textarea style="width:300px;height:150px">
+1
+2
+3
+4
+5</textarea>
+
+<h6 id="dowhile"></h6><br><br>
+<h2>do...while loop</h2>
+<p>The do..while loop is similar to the while loop with one important difference. The body of do...while loop is executed at least once. Only then, the test expression is evaluated.
+
+  <br>The syntax of the do...while loop is:</p>
+  <textarea rows=" 5" cols="33">do {
+    // the body of the loop
+  }
+  while (testExpression);</textarea>
+  <h5>How do...while loop works?</h5>
+  <ul>
+
+  <li>The body of do...while loop is executed once. Only then, the testExpression is evaluated.
+    The body of do...while loop is executed once. Only then, the testExpression is evaluated.
+  </li>
+  <li>  If testExpression is true, the body of the loop is executed again and testExpression is evaluated once more.
+  </li>
+<li>This process goes on until testExpression becomes false.
+</li>
+<li>If testExpression is false, the loop ends.
+</li>
+  </ul>
+  <br><h5>Flowchart of do while loop:</h5>
+  <img src="https://cdn.programiz.com/sites/tutorial2program/files/c-do-while-loop_0.jpg">
+  <h5>Example</h5>
+  <textarea rows="20" cols="60" disabled>// Program to add numbers until the user enters zero
+
+    #include <stdio.h>
+    int main() {
+      double number, sum = 0;
+    
+      // the body of the loop is executed at least once
+      do {
+        printf("Enter a number: ");
+        scanf("%lf", &number);
+        sum += number;
+      }
+      while(number != 0.0);
+    
+      printf("Sum = %.2lf",sum);
+    
+      return 0;
+    }</textarea>
+    <h5>Output</h5>
+    <textarea rows="6" cols="60">
+Enter a number: 1.5
+Enter a number: 2.4
+Enter a number: -3.4
+Enter a number: 4.2
+Enter a number: 0
+Sum = 4.70</textarea>
+<h6 id="switch"></h6><br><br>
+<h2>Switch Statement</h2>
+<p>Instead of writing many if..else statements, you can use the switch statement.
+
+  The switch statement selects one of many code blocks to be executed:</p>
+  <h5>Syntax: </h5>
+    <textarea cols="30" rows="10">switch(expression) {
+      case x:
+        // code block
+        break;
+      case y:
+        // code block
+        break;
+      default:
+        // code block
+    }</textarea>
+    <br>
+    <h5>This is how it works:</h5>
+    <ol>
+      <li>The switch expression is evaluated once
+      </li>
+      <LI>The value of the expression is compared with the values of each case
+      </LI>
+      <LI>If there is a match, the associated block of code is executed
+      </LI>
+      <li>The break statement breaks out of the switch block and stops the execution
+      </li>
+      <li>The default statement is optional, and specifies some code to run if there is no case match
+      </li>
+    </ol>
+      <p>The example below uses the weekday number to calculate the weekday name:</p>
+      <textarea name="" id="" cols="50" rows="30">
+        int day = 4;
+
+switch (day) {
+  case 1:
+    printf("Monday");
+    break;
+  case 2:
+    printf("Tuesday");
+    break;
+  case 3:
+    printf("Wednesday");
+    break;
+  case 4:
+    printf("Thursday");
+    break;
+  case 5:
+    printf("Friday");
+    break;
+  case 6:
+    printf("Saturday");
+    break;
+  case 7:
+    printf("Sunday");
+    break;
+}
+
+// Outputs "Thursday" (day 4)
+  
+</textarea>
+<p>When C reaches a break keyword, it breaks out of the switch block.
+
+  This will stop the execution of more code and case testing inside the block.
+  
+  When a match is found, and the job is done, it's time for a break. There is no need for more testing.</p>
+  Whereas The default keyword specifies some code to run if there is no case match
+  <h6 id="function"></h6><br><br>
+  <h2>C Functions</h2>
+  <p>Functions in C are the basic building blocks of a C program. A function is a set of statements enclosed
+     within curly brackets ({}) that take inputs, do the computation, and provide the resultant output. You can call a function multiple times, thereby allowing reusability and modularity in C programming.
+     It means that instead of writing the same code again and again for different arguments, you can simply enclose the code and make it a function and then call it multiple times by merely passing the various arguments.</p>
+<h4>Why Do We Need Functions in C Programming?</h4>
+<p>We need functions in C programming and even in other programming languages due to the numerous advantages they provide to the developer. Some of the key benefits of using functions are:
+</p>
+<ul>
+  <li>Enables reusability and reduces redundancy
+  </li>
+  <li>Makes a code modular
+  </li>
+  <li>Provides abstraction functionality
+  </li>
+  <li>The program becomes easy to understand and manage
+  </li>
+  <li>Breaks an extensive program into smaller and simpler pieces
+  </li>
+</ul>
+<br><h5>Types of Functions in C Programming
+</h5>
+<p>Functions in C programming are classified into two types:
+
+</p>
+<h5>Library Functions
+</h5>
+<p>Also referred to as predefined functions, library functions are already defined in the C libraries. This means that we do not have to write a definition or the function’s body to call them. We can simply call them without defining them as they are already defined. However, we need to include the library at the beginning of the code for calling a library function. We can then use the proper syntax of the function to call them. Printf(), scanf(), ceil(), and floor() are examples of library functions.
+
+</p>
+<br><h5>User-Defined Functions:
+</h5>
+<p>These are the functions that a developer or the user declares, defines, and calls in a program. This increases the scope and functionality, and reusability of C programming as we can define and use any function we want. A major plus point of C programming is that we can add a user-defined to any library to use it in other programs.
+
+</p>
+<h5>Basic Syntax of Functions
+</h5>
+<p><br>
+  return_type function_name(arg1, arg2, … argn)<br>{<br>
+
+    Body of the function //Statements to be processedbr
+
+    <br>
+    } <br>
+</p>
+<h4>General Aspects of Functions in C Programming
+</h4>
+<p>Functions in C programming have three general aspects: declaration, defining, and calling. Let’s understand what these aspects mean.</p>
+<h6>Function Declaration
+</h6>
+<p>The function declaration lets the compiler know the name, number of parameters, data types of parameters, and return type of a function. However, writing parameter names during declaration is optional, as you can do that even while defining the function.
+
+</p>
+<h6>Function Call
+</h6>
+<p>As the name gives out, a function call is calling a function to be executed by the compiler. You can call the function at any point in the entire program. The only thing to take care of is that you need to pass as many arguments of the same data type as mentioned while declaring the function. If the function parameter does not differ, the compiler will execute the program and give the return value.
+
+</p>
+<h6>Function Definition
+</h6>
+<p>It is defining the actual statements that the compiler will execute upon calling the function. You can think of it as the body of the function. Function definition must return only one value at the end of the execution.
+<br><br>here’s an example with all the three general aspects of a function <br>
+
+</p>
+<textarea name="" id="" cols="60" rows="35">
+  #include <stdio.h>
+  
+  // Function declaration  
+  
+  int max_Num(int i, int j){
+  
+      // Function definition
+  
+      if (i > j)
+  
+        return i;
+  
+      else
+  
+        return j;
+  
+  }
+  
+  // The main function. We will discuss about it later
+  
+  int main(void){
+  
+      int x = 15, y = 20;  
+  
+      // Calling the function to find the greater number among the two
+  
+      int m = max_Num(x, y);  
+  
+      printf("The bigger number is %d", m);
+  
+      return 0;
+  
+  }</textarea>
+  
+  <h6 id="Rfunction"></h6><br><br>
+  <h2>Recursive Functions in C Programming
+  </h2>
+  <p>Functions in C programming are recursive if they can call themselves until the exit condition is satisfied. If a function allows you to call itself within the definition in a C program, it is a recursive function. These functions run by stacking the calls until the exit condition is met and the flow of the program exits the function. Suppose you want to find the factorial of a number in C; you can use a recursive function to get the result. Here’s an example to find the factorial of 8.
+
+  </p>
+  <h5>Example</h5>
+  <textarea name="" id="" cols="60" rows="30">
+    #include <stdio.h>
+
+      int fact(int num);
+      
+      int main(){
+      
+        int i = 8;
+      
+        printf("The factorial of %d is: %d\n", i, fact(i)); 
+      
+        return 0;
+      
+      }
+      
+      int fact(int num){
+      
+          if (num == 1)
+      
+              // Exiting condition
+      
+              return (1);
+      
+          else
+      
+              return (num * fact(num - 1));
+      
+      }
+  </textarea><br>
+  <h5>Output:</h5>
+<textarea name="" id="" cols="60" rows="1">The factorial of 8 is: 40320</textarea>
+<p>Consider the following chart to more understand the recursive mechanism which consists of calling the function its self until the base case or stopping condition is reached, and after that, we collect the previous values:</p>
+<img src="https://www.guru99.com/images/1/020819_0726_Functionsin4.png">
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
+  

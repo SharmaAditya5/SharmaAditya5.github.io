@@ -1,0 +1,425 @@
+<!doctype html>
+    <html lang="en" data-bs-theme="dark">
+      <head>
+        <style>
+          h1{
+               width:100%;
+               background-color: rgb(53, 199, 109);
+              color: black;
+              text-align: center;
+          
+          }
+          .TopRight{
+            color:rgb(255, 244, 244);
+              margin-top: 4%;
+              position: fixed;
+              background-color: rgb(7, 7, 7);
+              width:150px;
+              height: 100%;
+          }
+          .mainC{
+              
+              float: left;
+              margin-left:150px;
+              margin-top: 4%;
+          }
+          textarea{
+            background-color: black;
+            color:white;
+          }
+          table {
+                  border-collapse: collapse;
+              }
+              th {
+                  text-align: center;
+                  background-color:green;
+                  Color:white;
+              }
+              td {
+                  background-color: blanchedalmond;
+                  border:1px solid black;
+                  padding:5px
+               
+              }
+              a:hover{
+                background-color:rgb(95, 43, 236);
+                font-size: larger;
+                border: 1px;
+                border-radius: 15px;
+              }
+      </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      </head>
+      <body style="overflow-y:auto">
+    
+        <nav class="navbar fixed-top bg-body-tertiary" data-bs-theme="blue">
+        <div class="container-fluid" >
+      
+          <a class="navbar-brand" href="#">LEARN C</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">UNIT 1</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="unit2.html">UNIT 2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="unit3.html">UNIT 3</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="unit4.html">UNIT 4</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="unit5.html">UNIT 5</a>
+                </li>
+              
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        </nav>
+        <div class="TopRight" data-bs-theme="dark">
+            <nav class="nav flex-column">
+          <a  style="color: aliceblue;" class="nav-link active" aria-current="page" href="structure">Structure</a>
+          <a class="nav-link" href="#if">Introduction</a>
+          <a class="nav-link" href="#ifelse">Accessing</a>
+          <a class="nav-link" href="#ifelse">Structure whithin structure</a>
+          <a style="color: aliceblue;" class="nav-link" href="#Nifelse">Union</a>
+          <a class="nav-link" href="#loop">Definition</a>
+          <a class="nav-link" href="#for">operations</a>
+          <a class="nav-link" href="#while">Enumerated data type</a>
+          <a style="color: aliceblue;" class="nav-link" href="#Nifelse">Storage Classes</a>
+          <a class="nav-link"href="#function">Introduction</a>
+          <a class="nav-link"href="#function">Types</a>
+          
+          
+      
+        </nav>
+      </div>
+      <div class="mainC">
+      <h1>UNIT 4</h1>
+      <h2>What is Structure data type? </h2>
+      <p>A structure is a keyword that creates user-defined data types in C/C++. A structure creates a data
+         type that can be used to group items of possibly different types into a single type. <br> Or Structures (also called structs) are a way to group several related variables 
+         into one place. Each variable in the structure is known as a member of the structure. Unlike an array, a structure can contain many 
+         different data types (int, float, char, etc.). </p>
+         <h5>How to create a structure? </h5>
+         <img style="width:400px; height: 300px;" src="https://1.bp.blogspot.com/-3nRtjT7Igjg/X6zmbVxTJfI/AAAAAAAABIQ/O9G-Het92bsnEsV_2sYRPyBrKN96jp0fQCLcBGAsYHQ/s1578/struct.jpg">
+         
+         <p>‘struct’ keyword is used to create a structure. Following is an example.  
+
+         </p>
+         
+         <textarea name="" id="" cols="90" rows="20">// A variable declaration with structure declaration.
+          struct Point
+          {
+          int x, y;
+          } p1; // The variable p1 is declared with 'Point'
+          
+          
+          // A variable declaration like basic data types
+          struct Point
+          {
+          int x, y;
+          };
+          
+          int main()
+          {
+          struct Point p1; // The variable p1 is declared like a normal variable
+          }
+          </textarea><br>
+          <h5>How to declare structure variables? </h5>
+         <p>A structure variable can either be declared with structure declaration or as a separate declaration like basic types. 
+
+         </p>
+         <textarea name="" id="" cols="90" rows="9">struct address
+          {
+          char name[50];
+          char street[100];
+          char city[50];
+          char state[20];
+          int pin;
+          };
+          </textarea>
+          <h2>Accessing Structure Members</h2>
+          <p>To access any member of a structure, we use the member access operator (.). The member access operator is coded as a period between the structure variable name and the structure member that we wish to access. You would use the keyword struct to define variables of structure type. The following example shows how to use a structure in a program −
+
+</p>
+<textarea name="" id="" cols="90" rows="43">
+  #include <stdio.h>
+  #include <string.h>
+ 
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+};
+int main( ) {
+
+   struct Books Book1;        /* Declare Book1 of type Book */
+   struct Books Book2;        /* Declare Book2 of type Book */
+ 
+   /* book 1 specification */
+   strcpy( Book1.title, "C Programming");
+   strcpy( Book1.author, "Nuha Ali"); 
+   strcpy( Book1.subject, "C Programming Tutorial");
+   Book1.book_id = 6495407;
+
+   /* book 2 specification */
+   strcpy( Book2.title, "Telecom Billing");
+   strcpy( Book2.author, "Zara Ali");
+   strcpy( Book2.subject, "Telecom Billing Tutorial");
+   Book2.book_id = 6495700;
+ 
+   /* print Book1 info */
+   printf( "Book 1 title : %s\n", Book1.title);
+   printf( "Book 1 author : %s\n", Book1.author);
+   printf( "Book 1 subject : %s\n", Book1.subject);
+   printf( "Book 1 book_id : %d\n", Book1.book_id);
+
+   /* print Book2 info */
+   printf( "Book 2 title : %s\n", Book2.title);
+   printf( "Book 2 author : %s\n", Book2.author);
+   printf( "Book 2 subject : %s\n", Book2.subject);
+   printf( "Book 2 book_id : %d\n", Book2.book_id);
+
+   return 0;
+}
+</textarea>
+<p>When the above code is compiled and executed, it produces the following result −</p>
+<textarea name="" id="" cols="30" rows="10">Book 1 title : C Programming
+Book 1 author : Nuha Ali
+Book 1 subject : C Programming Tutorial
+Book 1 book_id : 6495407
+Book 2 title : Telecom Billing
+Book 2 author : Zara Ali
+Book 2 subject : Telecom Billing Tutorial
+Book 2 book_id : 6495700</textarea>
+<h2>Structure whithin structure or Nested Structure</h2>
+<p>A nested structure in C is a structure within structure. One structure can be declared inside another structure in the same
+   way structure members are declared inside a structure.
+   <b><br>Synatx:</b>
+</p>
+<textarea name="" id="" cols="90" rows="16">struct name_1
+  {
+    member1;
+    member2;
+     .
+     .
+    membern;
+    struct name_2
+    {
+        member_1;
+        member_2;
+        .
+        .
+       member_n;
+    }, var1
+ } var2;</textarea>
+ <p><b>Example:</b></p>
+ <ul>
+  <li>Consider there are two structures Employee (depended structure) and another structure called Organisation(Outer structure).
+  </li>
+  <li>The structure Organisation has the data members like organisation_name,organisation_number.
+  </li>
+  <li>The Employee structure is nested inside the structure Organisation and it has the data members like employee_id, name, salary.
+  </li>
+  <textarea name="" id="" cols="90" rows="45">// C program to implement the above approach
+    #include <stdio.h>
+    #include <string.h>
+    
+    // Declaration of the main structure
+    struct Organisation
+    {
+    char organisation_name[20];
+    char org_number[20];
+      
+    // Declaration of the dependent structure
+    struct Employee
+    {
+      int employee_id;
+      char name[20];
+      int salary;
+      
+    // variable is created which acts as member to Organisation structure.
+    } emp;
+    };
+    int main()
+    {
+    struct Organisation org;
+    printf("The size of structure organisation : %ld\n",sizeof(org));
+    org.emp.employee_id = 101;
+    strcpy(org.emp.name, "Robert");
+    org.emp.salary = 400000;
+    strcpy(org.organisation_name,
+        "Kiet group of instituitions");
+    strcpy(org.org_number, "kiet123");
+      
+      
+    // Printing the details
+    printf("Organisation Name : %s\n",
+        org.organisation_name);
+    printf("Organisation Number : %s\n",
+        org.org_number);
+    printf("Employee id : %d\n",
+        org.emp.employee_id);
+    printf("Employee name : %s\n",
+        org.emp.name);
+    printf("Employee Salary : %d\n",
+        org.emp.salary);
+    }
+    </textarea>
+ </ul>
+ <h2>C - Unions</h2>
+ <p>A union is a special data type available in C that allows to store different data types 
+  in the same memory location. You can define a union with many members, but only one member
+   can contain a value at any given time. Unions provide an efficient way of using the same memory location for multiple-purpose.
+
+ </p>
+ <h5>Defining a Union
+</h5>
+ <p>A union is a special data type available in C that allows to store different data types in the same memory location.
+   You can define a union with many members, but only one member can contain a value at any given time. Unions provide
+    an efficient way of using the same memory location for multiple-purpose.
+
+ </p>
+ <textarea style="background-color: aliceblue; color: black;"  name="" id="" cols="90" rows="6">union [union tag] {
+  member definition;
+  member definition;
+  ...
+  member definition;
+} [one or more union variables]; </textarea>
+<p>The memory occupied by a union will be large enough to hold the largest member of the union. For example, if the largest
+   element is a char array of 20 byte then , Data type will occupy 20 bytes of memory space because this is the maximum 
+   space which can be occupied by a character string. The following example displays the total memory size occupied by the above union- </p>
+   <textarea style="background-color: aliceblue; color: black;" name="" id="" cols="90" rows="20">#include <stdio.h>
+    #include <string.h>
+     
+    union Data {
+       int i;
+       float f;
+       char str[20];
+    };
+     
+    int main( ) {
+    
+       union Data data;        
+    
+       printf( "Memory size occupied by data : %d\n", sizeof(data));
+    
+       return 0;
+    }
+    </textarea>
+    <p>When the above code is compiled and executed, it produces the following result −</p>
+    <textarea style="background-color: aliceblue; color: black;" name="" id="" cols="90" rows="3">
+      data.i : 1917853763
+      data.f : 4122360580327794860452759994368.000000
+      data.str : C Programming</textarea>
+      <p>Here, we can see that the values of i and f members of union got corrupted because the final value assigned 
+        to the variable has occupied the memory location and this is the reason that the value of str member is getting printed very well.
+
+      </p>
+      <h2>Enum in C</h2>
+      <p>Enumeration or Enum in C is a special kind of data type defined by the user. It consists of constant integrals or integers
+         that are given names by a user. The use of enum in C to name the integer values makes the entire program easy to learn, understand,
+          and maintain by the same or even different programmer.
+
+      </p>
+      <h5>Syntax to Define Enum in C</h5>
+      <p>
+        An enum is defined by using the ‘enum’ keyword in C, and the use of a comma separates the constants within. The basic syntax of defining an enum <br>
+
+enum enum_name{int_const1, int_const2, int_const3, …. int_constN};<br> <br>
+
+In the above syntax, the default value of int_const1 is 0, int_const2 is 1, int_const3 is 2, and so on. However, you can also change these default values while declaring the enum. Below is an example of an enum named cars and how you can change the default values. <br>
+
+enum cars{BMW, Ferrari, Jeep, Mercedes-Benz}; <br> 
+
+Here, the default values for the constants are: <br>
+
+BMW=0, Ferrari=1, Jeep=2, and Mercedes-Benz=3. However, to change the default values, you can define the enum as follows: <br> <br>
+enum cars{ <br>
+
+  BMW=3, <br>
+  
+  Ferrari=5, <br>
+  
+  Jeep=0, <br>
+  
+  Mercedes-Benz=1 <br>
+  
+  }; <br>
+      </p>
+    <h2>Storage Classes</h2>  
+    <p>A storage class defines the scope (visibility) and life-time of variables and/or functions within a C Program. They precede
+       the type that they modify.A storage class in C is used to describe the following things:
+       <ul>
+        <li>The variable scope.
+</li>
+<li>The location where the variable will be stored.
+</li>
+<li>The initialized value of a variable.
+</li>
+<li>A lifetime of a variable.
+</li>
+<li>Who can access a variable?
+</li>
+       </ul>
+       
+</p>
+       <h5>We have four different storage classes in a C program −</h5> 
+
+<u>
+  <li>auto</li>
+  <li>register</li>
+  <li>static</li>
+  <li>extern</li>
+</u>
+<h5>The auto Storage Class</h5>
+<p>The variables defined using auto storage class are called as local variables. Auto stands for automatic storage class. A variable is in auto
+   storage class by default if it is not explicitly specified.
+
+The scope of an auto variable is limited with the particular block only. Once the control goes out of the block, the access is destroyed. This
+ means only the block in which the auto variable is declared can access it.
+
+A keyword auto is used to define an auto storage class. By default, an auto variable contains a garbage value.</p>
+<h5>Extern Storage Class in C</h5>
+<p>Extern stands for external storage class. Extern storage class is used when we have global functions or variables which are shared between 
+  two or more files.
+
+Keyword extern is used to declaring a global variable or function in another file to provide the reference of variable or function which have 
+been already defined in the original file.
+
+The variables defined using an extern keyword are called as global variables. These variables are accessible throughout the program. Notice that the extern variable cannot be initialized it has already been defined in the original file.</p>
+<h5>Static Storage Class in C</h5>
+<p>The static variables are used within function/ file as local static variables. They can also be used as a global variable
+<ul>
+  <li>Static local variable is a local variable that retains and stores its value between function calls or block and remains visible only to
+     the function or block in which it is defined.</li>
+<li>Static global variables are global variables visible only to the file in which it is declared</li></p> 
+</ul>
+<h5>The register Storage Class</h5>
+<p>The register storage class is used to define local variables that should be stored in a register instead of RAM. This means that the 
+  variable has a maximum size equal to the register size (usually one word) and can't have the unary '&' operator applied to it (as it
+   does not have a memory location).
+<br><br>
+The register should only be used for variables that require quick access such as counters. It should also be noted that defining 
+'register' does not mean that the variable will be stored in a register.
+ It means that it MIGHT be stored in a register depending on hardware and implementation restrictions.
+</p>
+      </div> 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      </body>
+    </html>

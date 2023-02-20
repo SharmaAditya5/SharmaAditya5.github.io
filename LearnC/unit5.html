@@ -1,0 +1,515 @@
+<!doctype html>
+    <html lang="en" data-bs-theme="dark">
+      <head>
+        <style>
+          h1{
+               width:100%;
+               background-color: rgb(53, 199, 109);
+              color: black;
+              text-align: center;
+          
+          }
+          .TopRight{
+            font-size: medium;
+            color:rgb(255, 244, 244);
+              margin-top: 4%;
+              position: fixed;
+              background-color: rgb(7, 7, 7);
+              width:150px;
+              height: 100%;
+          }
+          .mainC{
+              
+              float: left;
+              margin-left:150px;
+              margin-top: 4%;
+          }
+          textarea{
+            background-color: black;
+            color:white;
+          }
+          table {
+            width: 500px;
+            height: 900px;;
+                  border-collapse: collapse;
+              }
+              th {
+                  text-align: center;
+                  background-color:green;
+                  Color:white;
+              }
+              td{
+              color: black;
+                  background-color: blanchedalmond;
+                  border:1px solid black;
+                  padding:5px
+               
+              }
+              a:hover{
+                background-color:rgb(95, 43, 236);
+                font-size: larger;
+                border: 1px;
+                border-radius: 15px;
+              }
+      </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      </head>
+      <body style="overflow-y:auto;     color: mistyrose;">
+        <nav class="navbar fixed-top bg-body-tertiary" data-bs-theme="blue">
+          <div class="container-fluid" >
+        
+            <a class="navbar-brand" href="#">LEARN C</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html">UNIT 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="unit2.html">UNIT 2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="unit3.html">UNIT 3</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="unit4.html">UNIT 4</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="unit5.html">UNIT 5</a>
+                  </li>
+                
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+          </nav>
+                  <div class="TopRight" data-bs-theme="dark">
+            <nav class="nav flex-column">
+          <a  style="color: aliceblue;" class="nav-link active" aria-current="page" aria-disabled="">Dynamic Memory Allocation</a>
+          <a class="nav-link" href="#intro">Introduction</a>
+          <a class="nav-link" href="#malloc">malloc</a>
+          <a class="nav-link" href="#calloc">calloc</a>
+          <a class="nav-link" href="#realloc">realloc</a>
+          <a class="nav-link" href="#free">free</a>
+          <a style="color: aliceblue;" class="nav-link" href="#">File Handling</a>
+          <a class="nav-link" href="#fileh">Basis</a>
+          <a class="nav-link" href="#function">File Handling functions</a>
+
+          <a class="nav-link" href="#cmd"> command line argument</a>
+          <a style="color: aliceblue;" class="nav-link" href="#" disabled>Graphics</a>
+          <a class="nav-link"href="#graph">Introduction</a>
+          <a class="nav-link"href="#Lfunction">library functions</a>
+          
+          
+      
+        </nav>
+      </div>
+      <div class="mainC">
+      <h1>UNIT 5</h1>
+      <h6 id="intro"></h6><br><br>
+          <h2>Dynamic memory allocation in C</h2>
+          <p>The concept of dynamic memory allocation in c language enables the C programmer to allocate memory at runtime. 
+            Dynamic memory allocation in c language is possible by 4 functions of stdlib.h header file.</p>
+            <ul>
+              <li>malloc()</li> 
+               <li>calloc()</li> 
+              <li>  realloc()</li> 
+            <li>  free()</li>
+            </ul>
+            <h6 id="malloc"></h6><br><br>
+<h3>malloc() function in C</h3>
+<p>The malloc() function allocates single block of requested memory. <br>
+  It doesn't initialize memory at execution time, so it has garbage value initially.
+
+  It returns NULL if memory is not sufficient. <br> <b>Synatx</b> </p>
+  <textarea name="" id="" cols="90" rows="1">ptr=(cast-type*)malloc(byte-size)  </textarea>
+  <br>
+  <p>Let's see the example of malloc() function.
+
+  </p>
+  <textarea name="" id="" cols="90" rows="22">
+      #include<stdio.h>  
+      #include<stdlib.h>  
+      int main(){  
+        int n,i,*ptr,sum=0;    
+          printf("Enter number of elements: ");    
+          scanf("%d",&n);    
+          ptr=(int*)malloc(n*sizeof(int));  //memory allocated using malloc    
+          if(ptr==NULL)                         
+          {    
+              printf("Sorry! unable to allocate memory");    
+              exit(0);    
+          }    
+          printf("Enter elements of array: ");    
+          for(i=0;i<n;++i)    
+          {    
+              scanf("%d",ptr+i);    
+              sum+=*(ptr+i);    
+          }    
+          printf("Sum=%d",sum);    
+          free(ptr);     
+      return 0;  
+      }    </textarea>
+      <br>
+      <p><b>Output:</b></p>
+      <textarea name="" id="" cols="90" rows="5">Enter elements of array: 3
+        Enter elements of array: 10
+        10
+        10
+        Sum=30</textarea>
+        <h6 id="calloc"></h6><br><br>
+<h3>calloc() function in C</h3>
+<p>
+  The calloc() function allocates multiple block of requested memory. <br>
+
+It initially initialize all bytes to zero. <br>
+
+It returns NULL if memory is not sufficient.
+<br><b>The syntax of calloc() function is given below:</b>
+</p>
+<textarea name="" id="" cols="90" rows="1">ptr=(cast-type*)calloc(number, byte-size)  </textarea>
+<p>Let's see the example of calloc() function.</p>
+<textarea name="" id="" cols="90" rows="22">#include<stdio.h>  
+  #include<stdlib.h>  
+  int main(){  
+   int n,i,*ptr,sum=0;    
+      printf("Enter number of elements: ");    
+      scanf("%d",&n);    
+      ptr=(int*)calloc(n,sizeof(int));  //memory allocated using calloc    
+      if(ptr==NULL)                         
+      {    
+          printf("Sorry! unable to allocate memory");    
+          exit(0);    
+      }    
+      printf("Enter elements of array: ");    
+      for(i=0;i<n;++i)    
+      {    
+          scanf("%d",ptr+i);    
+          sum+=*(ptr+i);    
+      }    
+      printf("Sum=%d",sum);    
+      free(ptr);    
+  return 0;  
+  }    </textarea>
+  <p><b>Output:</b></p>
+  <textarea name="" id="" cols="90" rows="5">Enter elements of array: 3
+    Enter elements of array: 10
+    10
+    10
+    Sum=30</textarea>
+    <h6 id="realloc"></h6><br><br>
+<h3>realloc() function in C</h3>
+<p>If memory is not sufficient for malloc() or calloc(), you can reallocate the memory by realloc() function. In short, it changes the memory size.</p>
+<p><b>Let's see the syntax of realloc() function.</b>
+</p>
+<textarea name="" id="" cols="90" rows="1">ptr=realloc(ptr, new-size)  </textarea>
+<h6 id="free"></h6><br><br>
+<h3>free() function in C</h3>
+<p>The memory occupied by malloc() or calloc() functions must be released by calling free() function. Otherwise, it will consume memory until program exit.
+
+ <br> <b>Let's see the syntax of free() function. </b> </p>
+ <textarea name="" id="" cols="90" rows="1">free(ptr)  </textarea>
+ <h6 id="filebasic"></h6><br><br>
+ <h2>File Handling in C</h2>
+ <p>File handling refers to the method of storing data in the C program in the form of an output or input that might have been generated while running a C
+   program in a data file, i.e., a binary file or a text file for future analysis and reference in that very program.</p>
+   <h4>File Operations</h4>
+   <ol><li>Creating a new file</li>
+  <li>Opening an existing file
+  </li>
+  <li>Closing a file
+  </li>
+  <li>Reading from and writing information to a file
+  </li> </ol>
+  <h4>Working with files</h4>
+  <p>When working with files, you need to declare a pointer of type file. This declaration is needed for communication between the file and the program.
+
+  </p>
+  <textarea name="" id="" cols="90" rows="2">FILE *fptr;
+  </textarea>
+  <br><br>
+  <h4>Opening a file - for creation and edit</h4>
+  <p>Opening a file is performed using the fopen() function defined in the stdio.h header file.
+  </p>
+  <textarea name="" id="" cols="90" rows="1">ptr = fopen("fileopen","mode");</textarea>
+<br><br><b>For example,</b><br>
+  <textarea name="" id="" cols="90" rows="3">fopen("E:\\cprogram\\newprogram.txt","w");
+
+  fopen("E:\\cprogram\\oldprogram.bin","rb");</textarea>
+
+  <h6 id="function"></h6><br><br>
+      <h3>Functions that We Use for File Handling in C</h3>
+      <p>We can use a variety of functions in order to open a file, read it, write more data, create a new file, close or delete a file, search for a file, etc. These are known as file handling operators in C.
+
+      </p>
+      <table>
+        <tr><th>Description of Function	</th>
+          <th>Function
+          </th>
+       </tr>
+       <tr><td>used to open an existing file or a new file	</td> <td>fopen()      </td></tr>
+       <tr><td>writing data into an available file	</td>
+      <td>fprintf()</td></tr>
+      <tr><td>reading the data available in a file	</td>
+        <td>fscanf()
+        </td></tr>
+        <tr><td>writing any character into the program file	</td>
+          <td>fputc()
+          </td></tr>
+
+          <tr><td>reading the character from an available file	</td>
+            <td>fgetc()
+            </td></tr>
+            <tr><td>used to close the program file	</td>
+              <td>fclose()
+              </td></tr>
+              <tr><td>used to set the file pointer to the intended file position	</td>
+                <td>fseek()
+                </td></tr>
+                <tr><td>writing an integer into an available file	</td><td>fputw()
+                </td></tr>
+                <tr><td>used for reading the current position of a file	</td><td>ftell()  </td></tr>
+                <tr><td>sets an intended file pointer to the file’s beginning itself</td><td>rewind()</td></tr>
+        
+      </table>
+      <h6 id="cmd"></h6><br><br>
+      <h3>C - Command Line Arguments</h3>
+      <p>It is possible to pass some values from the command line to your C programs when they are executed.
+         These values are called command line arguments and many times they are important for your program especially
+          when you want to control your program from outside instead of hard coding those values inside the code.
+<br><br>The command line arguments are handled using main() function arguments where argc refers to the number
+ of arguments passed, and argv[] is a pointer array which points to each argument passed to the program. Following 
+ is a simple example which checks if there is any argument supplied from the command line and take action accordingly -
+</p>
+<textarea name="" id="" cols="90" rows="15">#include <stdio.h>
+
+int main( int argc, char *argv[] )  {
+
+   if( argc == 2 ) {
+      printf("The argument supplied is %s\n", argv[1]);
+   }
+   else if( argc > 2 ) {
+      printf("Too many arguments supplied.\n");
+   }
+   else {
+      printf("One argument expected.\n");
+   }
+}</textarea>
+<p>When the above code is compiled and executed with single argument, it produces the following result.</p>
+<textarea name="" id="" cols="90" rows="2">$./a.out testing
+The argument supplied is testing</textarea>
+<p>It should be noted that argv[0] holds the name of the program itself and argv[1] is a pointer to the first command 
+  line argument supplied, and *argv[n] is the last argument. If no arguments are supplied, argc will be one, and if you
+   pass one argument then argc is set at 2.</p>
+   <h6 id="garph"></h6><br><br>
+<h2>Graphics </h2>
+<p>Graphics programming in C used to drawing various geometrical shapes(rectangle, circle eclipse etc), 
+  use of mathematical function in drawing curves, coloring an object with different colors and patterns and simple
+   animation programs like jumping ball and moving cars.
+
+</p>
+<h4>How to write????</h4>
+<p>The first step in any graphics program is to include graphics.h header file. The graphics.h header file provides 
+  access to a simple graphics library that makes it possible to draw lines,
+   rectangles, ovals, arcs, polygons, images, and strings on a graphical window.
+<br>
+The second step is initialize the graphics drivers on the computer using initgraph method of graphics.h library.</p>
+<p>
+It initializes the graphics system by loading the passed graphics driver then changing the system into graphics
+ mode. It also resets or initializes all graphics settings like color, palette, current position etc, to their default 
+ values. Below is the description of input parameters of initgraph function.</p>
+
+
+<ul>
+  <li> <b>graphicsDriver :</b>It is a pointer to an integer specifying the graphics driver to be used. It tells the
+     compiler that what graphics driver to use or to automatically detect the drive. In all our programs we will use
+      DETECT macro of graphics.h library that instruct compiler for auto detection of graphics driver.</li>
+      <li>
+        <b>graphicsMode :</b> It is a pointer to an integer that specifies the graphics mode to be used. If *gdriver
+         is set to DETECT, then initgraph sets *gmode to the highest resolution available for the detected driver.
+      </li>
+      <li>
+        <b>driverDirectoryPath </b>: It specifies the directory path where graphics driver files (BGI files)
+         are located. If directory path is not provided, then it will search for driver files in current working directory directory.
+          In all our sample graphics programs, you have to change path of BGI directory accordingly where you Turbo C++ compiler is installed.
+      </li>
+</ul>
+<p>At the end of our graphics program, we have to unloads the graphics drivers and sets the screen back to text mode by calling closegraph function.</p>
+<h4>First graphics program (Draw a line)</h4>
+<textarea name="" id="" cols="90" rows="15">#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+
+void main(void) {
+    int gdriver = DETECT, gmode;
+    int x1 = 200, y1 = 200;
+    int x2 = 300, y2 = 300;
+    clrscr();
+    
+    initgraph(&gdriver, &gmode, "c:\\turboc3\\bgi");
+    line(x1, y1, x2, y2);
+    getch();
+    closegraph();
+}</textarea>
+<br><br><h6 id="colorsinC"></h6><br><br>
+<h4> Colors in C Graphics Programming</h4>
+<p>There are 16 colors declared in graphics.h header file. We use
+   colors to set the current drawing color, change the color of background, 
+   change the color of text, to color a closed shape etc (Foreground and Background Color).
+    To specify a color, we can either use color constants like setcolor(RED), or their corresponding integer codes like 
+    setcolor(4). Below is the color code in increasing order.
+
+</p>
+
+<table class="defaultContentTable">
+<tbody><tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Background?</th>
+<th>Foreground?</th>
+</tr>
+<tr>
+<td>BLACK</td>
+<td>0</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BLUE</td>
+<td>1</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>GREEN</td>
+<td>2</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>CYAN</td>
+<td>3</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>RED</td>
+<td>4</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>MAGENTA</td>
+<td>5</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BROWN</td>
+<td>6</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LIGHTGRAY</td>
+<td>7</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>DARKGRAY</td>
+<td>8</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LIGHTBLUE</td>
+<td>9</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LIGHTGREEN</td>
+<td>10</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LIGHTCYAN</td>
+<td>11</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LIGHTRED</td>
+<td>12</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LIGHTMAGENTA</td>
+<td>13</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>YELLOW</td>
+<td>14</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>WHITE</td>
+<td>15</td>
+<td>NO</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BLINK</td>
+<td>128</td>
+<td>NO</td>
+<td>*</td>
+</tr>
+</tbody></table>
+<h3 id=1044>different type of functions of graphics.h</h3>
+<p><strong>getmaxx() Function:</strong> This function is used to get the maximum value of x coordinate in the current resolution.<br>
+Example: </p>
+<textarea name="" id="" cols="90" rows="1">max=getmaxx();</textarea>
+<p><strong>getmaxy() Function:</strong> It is used to get the maximum value of y coordinate in the current resolution.<br>
+Example: </p>
+<textarea name="" id="" cols="90" rows="1">xy=getmaxy();</textarea>
+<p><strong>setcolor() Function:</strong> It is used to specify the colour for a graphical picture going to be displayed. It has the following form:<br>
+</p>
+<textarea name="" id="" cols="90" rows="2">setcolor(m);  // where m is an integer or symbol representing the colour of the drawing.</textarea>
+<p><strong>setbkcolor() Function:</strong> This function is used to set the background color for the monitor screen. It has the following form:<br>
+</p>
+<textarea name="" id="" cols="90" rows="1">setbkcolor(m);</textarea>
+<p><strong>line() Function:</strong> It is used to draw a line on the monitor screen in the given coordinate position. It has the following form:<br>
+</p>
+<textarea name="" id="" cols="90" rows="1">line(x1, y1, x2, y2);</textarea>
+<p><strong>rectangle() Function:</strong> It is used to draw a rectangle by specifying the diagonal coordinates. It has the following syntax:<br>
+</p>
+<textarea name="" id="" cols="90" rows="1">rectangle(x1, y1, x2, y2);</textarea>
+<p><strong>circle() Function:</strong> It is used to draw a circle by specifying its center and radius. It has the following syntax:<br>
+</p>
+<textarea name="" id="" cols="90" rows="1">circle(x, y, r)</textarea>
+<p><strong>arc() Function:</strong> This function is used to draw a circular arc by specifying the centre, radius and starting and ending angles. It has the following syntax:<br>
+</p>
+<textarea name="" id="" cols="90" rows="1">arc(x, y, as, ea, r)</textarea>
+<p><strong>ellipse() Function:</strong> This function is used to draw an ellipse by specifying the centre, radius, start and end angles and the semi-major and semi-minor axes of the ellipse. It has the following syntax:<br>
+</p>
+<textarea name="" id="" cols="90" rows="1">ellipse(x, y, as, ea, xr, yr);</textarea>
+
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      </body>
+    </html>

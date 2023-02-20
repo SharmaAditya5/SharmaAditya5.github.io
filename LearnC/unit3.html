@@ -1,0 +1,606 @@
+<!doctype html>
+    <html lang="en" data-bs-theme="dark">
+      <head>
+        <style>
+          h1{
+               width:100%;
+               background-color: rgb(53, 199, 109);
+              color: black;
+              text-align: center;
+          
+          }
+          .TopRight{
+            color:rgb(255, 244, 244);
+              margin-top: 4%;
+              position: fixed;
+              background-color: rgb(7, 7, 7);
+              width:150px;
+              height: 100%;
+          }
+          .mainC{
+              
+              float: left;
+              margin-left:150px;
+              margin-top: 4%;
+          }
+          textarea{
+            background-color: black;
+            color:white;
+          }
+          table {
+                  border-collapse: collapse;
+              }
+              th {
+                  text-align: center;
+                  background-color:green;
+                  Color:white;
+              }
+              td {
+                  background-color: blanchedalmond;
+                  border:1px solid black;
+                  padding:5px
+               
+              }
+              a:hover{
+                background-color:rgb(95, 43, 236);
+                font-size: larger;
+                border: 1px;
+                border-radius: 15px;
+              }
+      </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      </head>
+  <body style="overflow-y:auto">
+    
+  <nav class="navbar fixed-top bg-body-tertiary" data-bs-theme="blue">
+  <div class="container-fluid" >
+
+    <a class="navbar-brand" href="#">LEARN C</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">UNIT 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="unit2.html">UNIT 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit3.html">UNIT 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit4.html">UNIT 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="unit5.html">UNIT 5</a>
+          </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  </nav>
+  <div class="TopRight" data-bs-theme="dark">
+      <nav class="nav flex-column">
+    <a  style="color: aliceblue;" class="nav-link active" aria-current="page" href="CArray">Array   </a>
+    <a class="nav-link" href="#1d">1-D Array</a>
+    <a class="nav-link" href="#2d">2-D Array</a>
+    <a style="color: aliceblue;" class="nav-link" href="#">Pointers in C</a>
+    <a class="nav-link" href="#pointer">Definition</a>
+    <a class="nav-link" href="#pointera">Pointer Arithmetic</a>
+    <a class="nav-link" href="#pointerf">Pointer to function</a>
+    <a class="nav-link"href="#p2p">Pointer to Pointer </a>
+    <a class="nav-link"href="#aop">Array of pointer </a>
+    <a style="color: aliceblue;" class="nav-link" href="#string">Strings in C</a>
+    <a class="nav-link"href="#initialization">Initialization</a>
+    <a class="nav-link"href="#access">Accessing</a>
+    <a class="nav-link"href="#Sfunction">String Functions</a>
+    
+
+  </nav>
+</div>
+<div class="mainC">
+<h1>UNIT 3</h1>
+<h6 id="CAray"></h6><br><br>
+<h2>Array</h2>
+<p>An array is a type of data structure that stores a fixed-size of a homogeneous collection of data. In short,
+     we can say that array is a collection of variables of the same type.
+
+    For example, if we want to declare 'n' number of variables, n1, n2...n., if we create all these variables
+     individually, then it becomes a very tedious task. In such a case, we create an array of variables having the
+      same type. Each element of an array can be accessed using an index of the element.</p>
+      <p>C array is beneficial if you have to store similar elements. For example, if we want to store the marks of
+         a student in 6 subjects, then we don't need to define different variables for the marks in the different subject.
+          Instead of that, we can define an array which can store the marks in each subject at the contiguous memory locations.</p>
+        <h5>Properties of Array</h5>
+        <ul><li>Each element of an array is of same data type and carries the same size, i.e., int = 4 bytes.
+        </li>
+        <li>Elements of the array are stored at contiguous memory locations where the first element is stored at the smallest memory location.
+        </li>
+        <li>Elements of the array can be randomly accessed since we can calculate the address of each element of the array with the given
+             base address and the size of the data element.
+        </li>
+    </ul>
+    <h5>Why do we need arrays? 
+    </h5>
+    <p>We can use normal variables (v1, v2, v3, ..) when we have a small number of objects, but if we want to store a large number of instances, it becomes 
+        difficult to manage them with normal variables. The idea of an array is to represent many instances in one variable.</p>
+        <img style="width: 700px; height: 300px;" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220728175227/Need-for-array.png">
+<h5>Advantage of Array
+</h5>  
+<ul>
+    <li><b>1) Code Optimization:</b> Less code to the access the data.</li>
+ <li><b>2) Ease of traversing:</b> By using the for loop, we can retrieve the elements of an array easily.</li>
+    <li><b>3) Ease of sorting:</b> To sort the elements of the array, we need a few lines of code only.</li>
+    <li><b>4) Random Access:</b> We can access any element randomly using the array.</li>
+</ul>
+<h5>Disadvantage of Array</h5>
+<ul>
+    <li><b>1) Fixed Size:</b> Whatever size, we define at the time of declaration of the array, we can't exceed the limit. So, it doesn't grow the size
+         dynamically like LinkedList which we will learn later.
+
+    </li>
+</ul>
+<h5>Types of array :</h5>
+<ul><li>1-D array</li><li>2-D array</li></ul>
+<h6 id="1d"></h6><br><br>
+<h2>Introduction to One Dimensional Array in C</h2>
+<p>We can visualize a one-dimensional array in C as a single row to store the elements. All the elements are stored at contiguous memory locations.
+     Now, we will see how to declare, initialize and access array elements:
+</p>
+<img style="height: 300px;width: 700px;" src="https://scaler.com/topics/images/1-%281%29.webp">
+<h5>Rules for Declaring One Dimensional Array in C</h5>
+<ul>
+    <li>Before using and accessing, we must declare the array variable.
+    </li>
+    <li>In an array, indexing starts from 0 and ends at size-1. For example, if we have arr[10] of size 10, then the indexing of elements ranges from 0 to 9.
+    </li>
+    <li>We must include data type and variable name while declaring one-dimensional arrays in C.
+    </li>
+    <li>We can initialize them explicitly when the declaration specifies array size within square brackets is not necessary.
+    </li>
+    <li>Each element of the array is stored at a contiguous memory location with a unique index number for accessing.
+    </li>
+</ul>
+<p>While declaring a one-dimensional array in C, the data type can be of any type, and also, we can give any name to the array, just like naming a random variable. <br>
+    Syntax:
+
+</p>
+<textarea name="" id="" cols="90" rows="1" disabled>int arr[5]; //arr is the array name of type integer, and 5 is the size of the array  </textarea>
+<h5>Initialization of One-Dimensional Array in C</h5>
+<p>After declaration, we can initialize array elements or simply initialize them explicitly at the time of declaration. One-Dimensional arrays in C are initialized either at Compile Time or Run Time.</p>
+<h6>Compile-Time Initialization
+</h6>
+<p>Compile-Time initialization is also known as static-initialization. In this, array elements are initialized when we declare the array implicitly. <br>Syntax:
+</p>
+<textarea name="" id="" cols="90" rows="2" disabled><data_type> <array_name> [array_size]={list of elements};
+</textarea>
+<p>C Program to illustrate Compile-Time Initialization:</p>
+    
+    <textarea name="" id="" cols="90" rows="9" disabled>#include <stdio.h>
+        int main(){
+            int nums[3]={0,1,2};
+            printf(" Compile-Time Initialization Example:\n");
+            printf(" %d ",nums[0]);
+            printf("%d ",nums[1]);
+            printf("%d ",nums[2]);
+        }
+        </textarea>
+        <b><p>Output:<br> &nbsp;&nbsp;&nbsp; 0 1 2</p></b>
+        <p>In this C program code, we have initialized an array nums of size 3 and elements as 0,1 and 2 in the list. This is compile-time initialization, and then at the end, we have printed all its values by accessing index-wise.
+
+        </p>
+        <h6>Run-Time Initialization
+        </h6>
+        <p>Runtime initialization is also known as dynamic-initialization. Array elements are initialized at the runtime after successfully compiling the program.
+<b><br>C Program to illustrate Run-Time Initialization:</b>
+        </p>
+        <textarea name="" id="" cols="90" rows="21" disabled>#include < stdio.h >
+
+            int main() {
+              
+                int nums[5];
+                printf("\n Run-Time Initialization Example:\n");
+                printf("\n Enter array elements: ");
+            
+                for (int i = 0; i < 5; i++) {
+                    scanf("%d", & nums[i]);
+                }
+            
+                printf(" Accessing array elements after dynamic Initialization: ");
+            
+                for (int i = 0; i < 5; i++) {
+                    printf("%d ", nums[i]);
+                }
+            
+                return 0;
+            }
+            </textarea>
+        <p><b>Input</b></p>
+            <textarea name="" id="" cols="90" rows="4" disabled>Run-Time Initialisation Example:    
+
+Enter array elements: 10 20 30 40 50
+                </textarea>
+                <p>
+                <b>Output</b></p>
+                <textarea name="" id="" cols="90" rows="2" disabled>Accessing array elements after dynamic Initialization: 10 20 30 40 50</textarea>
+     
+    <h5>Array Accessing</h5>
+    <p>In one-dimensional arrays in C, elements are accessed by specifying the array name and the index value within the square brackets. Array indexing starts from 0
+         and ends with size-1. If we try to access array elements out of the range, the compiler will not show any error message; rather, it will return some garbage value.
+<br>Syntax:
+    </p>
+    <textarea name="" id="" cols="90" rows="1" disabled><arr_name>[index];</textarea>
+<p>Example:</p>
+<textarea name="" id="" cols="90" rows="5" disabled>int nums[5] = {0, 1, 2, 3, 4};
+    printf("%d", nums[0]); //Array element at index 0 is printed
+    printf("%d", nums[-1]); //Garbage value will be printed
+</textarea>    
+<h5>C Program to illustrate declaration, initialization, and accessing of elements of a one-dimensional array in C:
+
+</h5>
+<textarea name="" id="" cols="90" rows="16">#include < stdio.h >
+
+    int main() {
+       //declaring and initializing one-dimensional array in C
+       int arr[3] = {10, 20, 30}; 
+    
+        // After declaration, we can also initialize the array as:
+        // arr[0] = 10; arr[1] = 20; arr[2] = 30;
+    
+        for (int i = 0; i < 3; i++) {
+            // accessing elements of array
+            printf(" Value of arr[%d]: %d\n", i, arr[i]);
+        }
+    }
+    </textarea>
+    <h6 id="2d"></h6><br><br>
+<h2>Two Dimensional Array in C</h2>
+<p>The two-dimensional array can be defined as an array of arrays. The 2D array is organized as matrices which
+     can be represented as the collection of rows and columns. However, 2D arrays are created to implement a 
+     relational database lookalike data structure. It provides ease of holding the bulk of data at once which 
+     can be passed to any number of functions wherever required.
+
+</p>
+<h5>Declaration of two dimensional Array in C</h5>
+<p>Syntax:<br>
+    <b>data_type array_name[rows][columns];</b> <br>Example:
+</p>
+<textarea name="" id="" cols="90" rows="1">int twodimen[4][3];  </textarea>
+<p>Here, 4 is the number of rows, and 3 is the number of columns.
+</p>
+<h5>Initialization of 2D Array in C
+</h5>
+<p>In the 1D array, we don't need to specify the size of the array if the declaration and initialization are being 
+    done simultaneously. However, this will not work with 2D arrays. We will have to define at least the second dimension
+     of the array. The two-dimensional array can be declared and defined in the following way.
+ </p>
+ <textarea name="" id="" cols="90" rows="1">int arr[4][3]={{1,2,3},{2,3,4},{3,4,5},{4,5,6}};</textarea>
+ <b><p>Two-dimensional array example in C</p></b>
+ <textarea name="" id="" cols="90" rows="13">#include<stdio.h>  
+    int main(){      
+    int i=0,j=0;    
+    int arr[4][3]={{1,2,3},{2,3,4},{3,4,5},{4,5,6}};     
+    //traversing 2D array    
+    for(i=0;i<4;i++){    
+     for(j=0;j<3;j++){    
+       printf("arr[%d] [%d] = %d \n",i,j,arr[i][j]);    
+     }//end of j    
+    }//end of i    
+    return 0;  
+    }    
+</textarea>
+<p>Output:</p>
+<textarea name="" id="" cols="90" rows="12">
+    arr[0][0] = 1
+    arr[0][1] = 2
+    arr[0][2] = 3
+    arr[1][0] = 2
+    arr[1][1] = 3
+    arr[1][2] = 4
+    arr[2][0] = 3
+    arr[2][1] = 4
+    arr[2][2] = 5
+    arr[3][0] = 4
+    arr[3][1] = 5
+    arr[3][2] = 6</textarea>
+    <h6 id="pointer"></h6><br><br>
+<h2>Pointers</h2>
+<p>The pointer in C language is a variable which stores the address of another variable. This variable can be of type int, char, array,
+   function, or any other pointer. The size of the pointer depends on the architecture. However, in 32-bit architecture the size of a pointer 
+   is 2 byte.
+
+</p>
+<h5>Declaring a pointer
+</h5>
+<p>The pointer in c language can be declared using * (asterisk symbol). It is also known as indirection pointer used to dereference a pointer.
+
+</p>
+
+<textarea name="" id="" cols="90" rows="2">int *a;//pointer to int  
+    char *c;//pointer to char</textarea>
+    <h5>Pointer Example</h5>
+    <img src="https://static.javatpoint.com/cpages/images/pointer.png">
+    <p>As you can see in the above figure, pointer variable stores the address of number variable, i.e., fff4. The value of number variable is
+       50. But the address of pointer variable p is aaa3.
+
+        By the help of * (indirection operator), we can print the value of pointer variable p.
+        
+        Let's see the pointer example as explained for the above figure.</p>
+        <textarea name="" id="" cols="90" rows="13">#include<stdio.h>  
+            int main(){  
+            int number=50;    
+            int *p;      
+            p=&number;//stores the address of number variable    
+            printf("Address of p variable is %x \n",p); // p contains the address of the number therefore printing p gives the address of number.     
+            printf("Value of p variable is %d \n",*p); // As we know that * is used to dereference a pointer therefore if we print *p, we will
+             get the value stored at the address contained by p.    
+            return 0;  
+            }    </textarea>
+            <p>Output:</p>
+            <textarea name="" id="" cols="90" rows="3">
+Address of number variable is fff4
+Address of p variable is fff4
+Value of p variable is 50</textarea>
+
+<h6 id="pointera"></h6><br><br>
+<h2>Pointer Arithmetic in C</h2>
+<p>We can perform arithmetic operations on the pointers like addition, subtraction, etc. However, as we know that pointer contains
+   the address, the result of an arithmetic operation performed on the pointer will also be a pointer if the other operand is of type 
+   integer. In pointer-from-pointer subtraction, the result will be an integer value. Following arithmetic operations are possible on the
+    pointer in C language:</p>
+    <h5>Incrementing Pointer in C
+</h5>
+<p>If we increment a pointer by 1, the pointer will start pointing to the immediate next location. This is somewhat different from the general 
+  arithmetic since the value of the pointer will get increased by the size of the data type to which the pointer is pointing.
+
+</p>
+<p>We can traverse an array by using the increment operation on a pointer which will keep pointing to every element of the array, perform some
+   operation on that, and update itself in a loop.
+</p>
+<b><p>Let's see the example of incrementing pointer variable on 64-bit architecture.</p></b>
+<textarea name="" id="" cols="90" rows="12">#include<stdio.h>  
+int main(){  
+int number=50;        
+int *p;//pointer to int      
+p=&number;//stores the address of number variable        
+printf("Address of p variable is %u \n",p);        
+p=p+1;        
+printf("After increment: Address of p variable is %u \n",p); // in our case, p will get incremented by 4 bytes.      
+return 0;  
+}    </textarea>
+<b><p>Output:</p></b>
+<textarea name="" id="" cols="90" rows="2">Address of p variable is 3214864300 
+After increment: Address of p variable is 3214864304 </textarea>
+<h5>Decrementing Pointer in C</h5>
+<p>Like increment, we can decrement a pointer variable. If we decrement a pointer, it will start pointing to the previous location. The formula of decrementing the pointer is given below:
+</p>
+<p>Let's see the example of decrementing pointer variable on 64-bit OS</p>
+<textarea name="" id="" cols="90" rows="10">#include <stdio.h>            
+void main(){            
+int number=50;        
+int *p;//pointer to int      
+p=&number;//stores the address of number variable        
+printf("Address of p variable is %u \n",p);        
+p=p-1;       
+printf("After decrement: Address of p variable is %u \n",p); // P will now point to the immidiate previous location.         
+}      </textarea>
+<b><p>Output:</p></b>
+<textarea name="" id="" cols="90" rows="2">Address of p variable is 3214864300 
+After decrement: Address of p variable is 3214864296 </textarea>
+
+<h6 id="pointerf"></h6> <br><br>
+<h4>Pointer to function</h4>
+<p>Like the pointer to normal variables, we can also use pointers to point the functions. <br>Like every
+   variables function also has unique memory address.</p>
+   <strong>Function pointer syntax: <br></strong>
+   <textarea name="" id="" cols="90" rows="1"> void (*fptr)(); </textarea><br><p>We must enclose the function pointer variable with (). like (*fptr).
+
+    Where *fptr is a function pointer, capable of referring a function whose return type is void and also it will not take any argument (). </p>
+   <b>Example:</b> <br>
+    <textarea name="" id="" cols="90" rows="18">
+      /*Program  : Function Pointer with argument*/    
+     #include<stdio.h>
+     int sum(int x, int y)
+     {
+         return x+y;
+     }
+     
+     int main()
+     {
+         int ans;
+         int (*fptr)(int,int);
+         fptr = sum;
+         ans = (*fptr)(10,5);
+         printf("10+5 = %d\n",ans);
+         ans = (*fptr)(100,10);
+         printf("100+10 = %d\n",ans);
+         return 0;
+     }</textarea>
+<p>output:</p>
+<textarea name="" id="" cols="30" rows="10">10+5-15
+100+10=110
+</textarea>
+<h4>How to declare a function which accepts a pointer as an argument?</h4>
+<p>If a function wants to accept an address of an integer variable then the function declaration will be,</p>
+<textarea name="" id="" cols="90" rows="1">return_type function_name(int*);</textarea>
+<p>Here, we are passing the address of a variable.
+
+  So, if we change the argument value in the function, it will modify the actual value of a variable. <br><strong>Example:</strong></p>
+  
+  <textarea name="" id="" cols="90" rows="15">#include<stdio.h>
+    void setToZero(int *a)
+    {
+      *a = 0;
+    }
+    int main()
+    {
+      int a = 10;
+      printf("Before calling the function a = %d\n",a);
+    
+      setToZero(&a);
+      printf("After calling the function a = %d\n",a);
+    
+      return 0;
+    }</textarea>
+<p><strong>Output:</strong></p>
+<textarea name="" id="" cols="90" rows="2">Before calling the function a =10
+After calling the function a = 0</textarea>
+<b><p>Visual Representation:</p></b>
+<img src="https://www.log2base2.com/images/c/pass-pointer-argument-to-function.png">
+<br> <br>
+<ol>
+  <li>Address of a variable a 1024 is passed to function setToZero().</li>
+  <li>*a = 0 will modify the original value of a. So, a value in main function will be 0 after the function execution.</li>
+</ol>
+
+<h6 id="p2p"></h6><br><br>
+<h4>Pointer to Pointer</h4>
+<p>Pointer to a pointer is a form of multiple indirection or a chain of pointers.
+  Normally, a pointer contains the address of a variable. When we define a
+  pointer to a pointer, the first pointer contains the address of the second
+  pointer, which points to the location that contains the actual value as shown
+  below.</p>
+  <img style="width: 60%;" src="https://media.geeksforgeeks.org/wp-content/uploads/20190710183146/Pointer-To-Pointer.jpg">
+  <br> <br>
+  <p>A variable that is a pointer to a pointer must be declared as such. This is done
+    by placing an additional asterisk in front of its name. For example, following
+    is the declaration to declare a pointer to a pointer of type int − <br>
+    <b>int **var;</b></p>
+<p>When a target value is indirectly pointed to by a pointer to a pointer,
+  accessing that value requires that the asterisk operator be applied twice, as
+  is shown below in the example −
+  </p>
+  <textarea name="" id="" cols="90" rows="17">#include <iostream>
+    using namespace std;
+    int main () {
+     int var;
+     int *ptr;
+     int **pptr;
+     var = 3000;
+     // take the address of var
+     ptr = &var;
+     // take the address of ptr using address of operator &
+     pptr = &ptr;
+     // take the value using pptr
+ cout << "Value of var :" << var << endl;
+ cout << "Value available at *ptr :" << *ptr << endl;
+ cout << "Value available at **pptr :" << **pptr << endl;
+ return 0;
+}</textarea>
+<p><b>Output:</b></p>
+  <textarea name="" id="" cols="90" rows="3">Value of var :3000
+Value available at *ptr :3000
+Value available at **pptr :3000</textarea>
+
+
+<h6 id="aop"></h6><br><br>
+<h2>Array of pointers:</h2>
+<p>
+  When we require multiple pointers in a C program, we create an array of
+   multiple pointers and use it in the program. We do the same for all the
+    other data types in the C program.</p>
+    <p>When we want to point at multiple variables or memories of the
+       same data type in a C program, we use an array of pointers.
+
+      Let us assume that a total of five employees are working at a cheesecake factory. We can 
+      store the employees’ names in the form of an array. Along with this,
+       we also store the names of employees working at the office, the library, and the shoe store.
+      
+      Now, let us assume that once we read all the names of the employees randomly, 
+      we want to sort all of the employees’ names working in the cheesecake factory.
+       Sorting all the employee names requires reading, swapping, and copying a lot of data. But
+        since we have stored all the employee names in groups/ arrays, we can directly
+         refer to the array of names of employees working at the cheesecake factory.</p>
+<h5>Declaration of array of pointer</h5>
+<textarea name="" id="" cols="90" rows="1">int *ary[55]</textarea>
+<p>This one is an array of a total of 55 pointers. In simple words, this array is capable 
+  of holding the addresses a total of 55 integer variables. Think of it like this- the ary[0]
+   will hold the address of one integer variable, then the ary[1] will hold the address of the 
+   other integer variable, and so on.
+<br><b>Example:</b></p>
+<textarea name="" id="" cols="90" rows="15">#include<stdio.h>
+  #define SIZE 10
+  int main()
+  {
+  int *arr[3];
+  int p = 40, q = 60, r = 90, i;
+  arr[0] = &p;
+  arr[1] = &q;
+  arr[2] = &r;
+  for(i = 0; i < 3; i++){
+  printf(“For the Address = %d\t the Value would be = %d\n”, arr[i], *arr[i]);
+  }
+  return 0;
+  }</textarea>
+  <p>The output generated out of the program mentioned above would be like this:</p>
+  <textarea name="" id="" cols="90" rows="4">For the Address = 387130656 the Value would be = 40
+For the Address = 387130660 the Value would be = 60
+For the Address = 387130664 the Value would be = 90</textarea>
+
+
+
+
+<h6 id="string"></h6><br><br>
+<h2>C Strings</h2>
+<p>The string can be defined as the one-dimensional array of characters terminated by a null ('\0').
+   The character array or the string is used to manipulate text such as word or sentences. 
+  Each character in the array occupies one byte of memory, and the last character must always be 0
+  . The termination character ('\0') is important in a string since it is the only way to identify
+   where the string ends. When we define a string as char s[10], the character s[10] is implicitly
+    initialized with the null in the memory.
+  <h4>Declaration of Strings</h4>
+<br>Let's see the example of declaring string by char array in C language.
+</p>
+<textarea name="" id="" cols="90" rows="2">char str_name[size];
+  <b>Example: </b>char ch[10]={'j', 'a', 'v', 'a', 't', 'p', 'o', 'i', 'n', 't', '\0'};</textarea>
+   <p>In the above syntax str_name is any name given to the string variable and size is used to define the length of the string, i.e the number of characters strings will store. 
+    Note: There is an extra terminating character which is the Null character (‘\0’) used to indicate the termination of a string that differs strings from normal character arrays.
+     When a Sequence of characters enclosed in the double quotation marks is encountered by the compiler, a null character ‘\0’ is appended at the end of the string by default.</p>
+     <p>A string can be initialized in different ways. We will explain this with the help of an example. Below are the examples to declare a string with the name str and initialize it with “GeeksforGeeks”.</p>
+     <br><br><h6 id="access"></h6>
+     <h3><strong>4 Ways to Initialize a String in C</strong></h3>
+     <p><strong>1. Assigning a string literal without size: </strong>String literals can be assigned without size. Here, the name of the string str acts as a pointer because it is an array.</p>
+     <pre>char str[] = "LearnC"; </pre>
+     <p><strong>2. Assigning a string literal with a predefined size: </strong>String literals can be assigned with a predefined size. But we should always account for one extra space which will be assigned to the null character. If we want to store a string of size n then we should always declare a string with a size equal to or greater than n+1.</p>
+     <pre>char str[50] = "LearnC";</pre>
+     <p><strong>3. Assigning character by character with size:</strong> We can also assign a string character by character. But we should remember to set the end character as ‘\0’ which is a null character.</p>
+     <pre>char str[14] = { 'G','e','e','k','s','f','o','r','G','e','e','k','s','\0'};</pre>
+     <p><strong>4. Assigning character by character without size:</strong> We can assign character by character without size with the NULL character at the end. The size of the string is determined by the compiler automatically.</p>
+     <pre>char str[] = { 'G','e','e','k','s','f','o','r','G','e','e','k','s','\0'};</pre>
+
+     <br><br><p>Let us now look at a sample program to get a clear understanding of declaring, initializing a string in C, and also how to print a string with its size.</p>
+     <textarea name="" id="" cols="90" rows="17">// C program to illustrate strings
+
+      #include <stdio.h>
+      #include <string.h>
+      int main()
+      {
+        // declare and initialize string
+        char str[] = "LearnC";
+        // print string
+        printf("%s\n", str);
+        int length = 0;
+        length = strlen(str);
+        // displaying the length of string
+        printf("Length of string str is %d", length);      
+        return 0;
+      }
+      </textarea>
+<p><b>Output:</b></p>
+<textarea name="" id="" cols="30" rows="2">LearnC
+Length of string str is 6</textarea>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+    </html>
