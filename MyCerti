@@ -1,0 +1,27 @@
+[
+  {
+    "login": "mojombo",
+    "id": 1,
+    "node_id": "MDQ6VXNlcjE=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mojombo",
+    
+  },
+ {
+    "login": "defunkt",
+    "id": 2,
+    "node_id": "MDQ6VXNlcjI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/defunkt",
+}
+{
+    "login": "defunkt",
+    "id": 3,
+    "node_id": "MDQ6VXNlcjI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/defunkt",
+}
+]
